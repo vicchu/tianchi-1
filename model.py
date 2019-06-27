@@ -42,7 +42,7 @@ class Unet(nn.Module):
         )
         self.deconv4=nn.Sequential(
             nn.ConvTranspose2d(conv_dim * (2+1),out_dim ,kernel_size=3,stride=2,padding=1,output_padding=1),
-            nn.Softmax(dim=1),
+#             nn.Softmax(dim=1),
         )
         for m in self.modules():
             if isinstance(m, (nn.Conv2d,nn.ConvTranspose2d)):
